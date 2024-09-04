@@ -4,7 +4,7 @@
 
 * etcd - It is a distributed, reliable, key-value store that is simple, secure, and fast.
 
-##### etcd role in k8s
+### etcd role in k8s
 
 * The etcd data store stores information regarding the cluster such as the notes, pods, convicts, secrets, accounts, roles, role bindings, and others.
 * Every change you make to your cluster such as adding additional nodes, deploying pods or replica sets are updated in the etcd server.
@@ -68,7 +68,7 @@ So, when a pod is created, kube-scheduler continuously monitors the kube-api ser
 * It allows you to describe the desired state of your application's pods, and the Deployment controller changes the actual state to the desired state at a controlled rate.
 * Deployments are a key resource for managing applications in a Kubernetes cluster.
 
-##### Features and components of a Kubernetes Deployment
+### Features and components of a Kubernetes Deployment
 
 * **Pod Template** - A Deployment specifies the desired state through a Pod template. This template describes the characteristics of the pods that should be created, including the container image, ports, and other settings.
 * **Replica Sets** - Deployments use Replica Sets underneath to ensure the desired number of replicas (pod instances) are maintained. The Replica Set helps manage the scaling of pods and ensures high availability.
@@ -87,7 +87,7 @@ So, when a pod is created, kube-scheduler continuously monitors the kube-api ser
 
 * Types of Services - NodePort, ClusterIP & LoadBalancer.
 
-##### Services - ClusterIP
+### Services - ClusterIP
 
 * Description: This is the default type. The clusterIP make the pod accessible internally to other pods by assigning an IP to it. Other pods within the same cluster can communicate with this service using the ClusterIP, but external traffic from outside the cluster cannot reach this service directly using the ClusterIP. This provides a way for pods within the cluster to interact with the service without exposing it to external networks.
 * Use Case: It is used for communication between different components within the cluster. For example, if you have a frontend and backend service, the frontend can communicate with the backend using a ClusterIP service.
@@ -110,7 +110,7 @@ So, when a pod is created, kube-scheduler continuously monitors the kube-api ser
 * **Port**: This is the port number that the Service will listen on within the cluster. Other pods or services can access the Service using this port.
 * **TargetPort**: This is the port number on which the pod's container is listening. The Service forwards incoming traffic on its own port to this targetPort of the pod, effectively routing requests to the correct container.
 
-##### Services - NodePort
+### Services - NodePort
 
 * Description: This type exposes the service on each node's IP at a static port. It allows external users to access the service by connecting to any node in the cluster on the specified port.
 * Use Case: It is commonly used when you need to expose the service to external users or systems. For example, if you have a web application, you can use NodePort to allow external users to access it
@@ -118,7 +118,7 @@ So, when a pod is created, kube-scheduler continuously monitors the kube-api ser
   * In addition to a ClusterIP, NodePort assigns a static port (e.g., 30000-32767) on each node to the service.
   * External traffic hitting any node's IP on the NodePort is forwarded to the ClusterIP and then to the corresponding pods.
 
-##### Services - LoadBalancer
+### Services - LoadBalancer
 
 * Description: This type provisions an external load balancer (e.g., cloud load balancer) and assigns a stable external IP to the service. Traffic to this external IP is then routed to the service's ClusterIP.
 * Use Case: It is suitable for scenarios where you need external access and want to distribute traffic across multiple nodes using a load balancer. This type is often used in cloud environments where native load balancers are available.
